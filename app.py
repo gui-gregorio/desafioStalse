@@ -19,7 +19,7 @@ df = pd.DataFrame({
 })
 
 # RENDERIZE OS VALORES DO DATAFRAME df EM UMA TABELA HTML DENTRO DA PÁGINA /table.html (CRIE UM HTML PARA ISSO)
-#HTML Foi criado dentro de templates com o nome table.html, adicionei a parte onde 
+#HTML Foi criado dentro de templates com o nome table.html, adicionei a parte onde renderiza a tabela no código df=df
 @app.route('/table')
 def table():
     return render_template('table.html', df=df)
