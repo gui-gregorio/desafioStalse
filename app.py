@@ -3,9 +3,7 @@ import pandas as pd
 
 app = Flask(__name__)
 
-##########################################################
-########################### 01 ###########################
-##########################################################
+
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -21,7 +19,11 @@ df = pd.DataFrame({
 })
 
 # RENDERIZE OS VALORES DO DATAFRAME df EM UMA TABELA HTML DENTRO DA PÁGINA /table.html (CRIE UM HTML PARA ISSO)
+#HTML Foi criado dentro de templates com o nome table.html, adicionei a parte onde 
 @app.route('/table')
 def table():
+    return render_template('table.html', df=df)
 
-    return render_template('table.html', )
+#Por padrão o Flask roda na porta 8000,. aqui vai o código pra mudar para a porta 5000 como solicitado no desafio
+if __name__ == '__main__':
+    app.run(debug=True, port=5000)

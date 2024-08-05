@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tabela alunos e notas</title>
+        <style>
+            table{
+                border-collapse: collapse;
+                width: 100;
+            }
+            th, td {
+                border: 1px, solid black;
+                padding: 8px;
+                text-align: left;
+            }
+ 
+        </style>
+    </head>
+    <body>
+        <h1>Alunos e notas: </h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Aluno</th>
+                    <th>Nota</th>
+                </tr>
+                <tbody>
+                    {% for index, row in df.iterrows() %}
+                    <tr>
+                        <td>{{ row['alunos'] }}</td>
+                        <td>{{ row['notas'] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </thead>
+        </table>
+    </body>
+</html>
